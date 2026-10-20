@@ -2,10 +2,11 @@ import express from "express";
 import routes from "./src/routes/crmRoutes";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import "dotenv/config";
 
 const app = express();
-const PORT = 3000;
-const uri = "mongodb+srv://shadabsaifi749_db_user:3suIfZjbNTSnEJeS@cluster0.q20hrme.mongodb.net/";
+const PORT = process.env.PORT || 3000;
+const uri = process.env.DB_URL;
 
 //mongoose connection
 mongoose.Promise = global.Promise;
